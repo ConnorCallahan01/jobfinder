@@ -12,6 +12,8 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains.question_answering import load_qa_chain
 from serpapi import GoogleSearch
 from langchain.chains import RetrievalQA
+import streamlit.components.v1 as components
+from streamlit.components.v1 import html
 
 
 with st.sidebar:
