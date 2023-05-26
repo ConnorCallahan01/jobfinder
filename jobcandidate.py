@@ -71,7 +71,7 @@ def coverLetter(documents, name, role, description):
     texts = documents
     docsearch = Chroma.from_documents(texts, embeddings)
     prompt_template = f"Your job is to take in the LinkedIn profile provided and to generate a cover letter for that person based on the job title, company name, and role description. The cover letter should be polite, professional, and include the person's experience that would make them a great role for the position. Company name: {name}, Job Title: {role}, Job Description: {description}"
-    qa = RetrievalQA.from_chain_type(llm=OpenAI(max_tokens=550), chain_type="stuff", retriever=docsearch.as_retriever(search_kwargs={"k": 2}))         
+    qa = RetrievalQA.from_chain_type(llm=OpenAI(max_tokens=550), chain_type="stuff", retriever=docsearch.as_retriever(search_kwargs={"k": 1}))         
     result = qa(prompt_template)
     st.write(result["result"])
 
