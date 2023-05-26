@@ -79,9 +79,10 @@ def coverLetter(documents, name, role, description):
 
 
 st.header("Job Search Assistant")
-st.caption("""Enter in a LinkedIn URL. It'll give you a list of 5 options for potential job titles. When clicking on the check for each title, it will give 10 expanders with job role and company name. Clicking on each expander reveals requirements, qualifications, and benefits for that position. 
-             As the bottom of each job expander, you'll see a button that says 'Make me a Cover Letter'. Upon clicking this button, it will make a cover letter for that job position with mentions to the candidate's experience based from the LinkedIn profile. NOTE: these cover letters are meant to be a template 
-             for what the user could use. It should be edited and not just copy and pasted.""")
+st.caption("""Enter in a LinkedIn URL. It'll give you a list of 5 options for potential job titles. """)
+st.caption("""When clicking on the check for each title, it will give 10 expanders with job role and company name. Clicking on each expander reveals requirements, qualifications, and benefits for that position. """)
+st.caption("""As the bottom of each job expander, you'll see a button that says 'Make me a Cover Letter'. Upon clicking this button, it will make a cover letter for that job position with mentions to the candidate's experience based from the LinkedIn profile.""")
+st.caption("""NOTE: these cover letters are meant to be a template for what the user could use. It should be edited and not just copy and pasted.""")
 
 if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
