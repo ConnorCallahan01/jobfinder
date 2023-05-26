@@ -4,3 +4,4 @@ streamlit
 apify-client
 openai
 chromadb
+tiktoken
