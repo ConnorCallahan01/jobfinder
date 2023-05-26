@@ -17,9 +17,10 @@ from langchain.chains import RetrievalQA
 with st.sidebar:
     open_api_key = st.text_input("Enter your Open API Key")
     apify_api_key = st.text_input("Enter your Apify API Key")
+    serp_api_key = st.text_input("Enter your SERPAPI Key")
+os.environ["OPENAI_API_KEY"] = open_api_key 
+os.environ["APIFY_API_TOKEN"] = apify_api_key 
 
-os.environ["OPENAI_API_KEY"] = open_api_key #"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"
-os.environ["APIFY_API_TOKEN"] = apify_api_key #"apify_api_wAlNEn0EzZ5ceR9Ty6cnNcQAaAnGg20XwgOh"
 @st.cache_resource
 def load_patrick(url): 
     
@@ -128,7 +129,7 @@ if linkedin_url:
         "engine": "google_jobs",
         "google_domain": "google.com",
         "q": i,
-        "api_key": "1bd6027ddee1316d395d573469bb88d37c4da94269d53fb85cc2896fdf31dd71"
+        "api_key": serp_api_key
         }
 
         search = GoogleSearch(params)
