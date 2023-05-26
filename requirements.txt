@@ -1,3 +1,4 @@
 langchain
 google-search-results
 streamlit
+apify-client
