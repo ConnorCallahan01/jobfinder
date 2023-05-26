@@ -18,6 +18,7 @@ with st.sidebar:
     open_api_key = st.text_input("Enter your Open API Key")
     apify_api_key = st.text_input("Enter your Apify API Key")
     serp_api_key = st.text_input("Enter your SERPAPI Key")
+    st.write("Support my projects, buy me a coffee! [link](https://bmc.link/pcallahan)")
 os.environ["OPENAI_API_KEY"] = open_api_key 
 os.environ["APIFY_API_TOKEN"] = apify_api_key 
 
