@@ -25,7 +25,7 @@ with st.sidebar:
     components.html("""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
                             <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="connor-callahan" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/connor-callahan?trk=profile-badge"></a></div>
                 """, height=280)
-os.environ["OPENAI_API_KEY"] = open_api_key 
+# os.environ["OPENAI_API_KEY"] = open_api_key 
 os.environ["APIFY_API_TOKEN"] = apify_api_key 
 
 @st.cache_resource
@@ -69,7 +69,7 @@ def question(_texts):
 
 
     st.write("3: Searching for recommended job titles...")
-    chain = load_qa_chain(OpenAI(temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
+    chain = load_qa_chain(OpenAI(openai_api_key=open_api_key, temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
     outcome = chain({"input_documents": docs, "question": prompt_template}, return_only_outputs=True)
     return outcome['output_text']
 
