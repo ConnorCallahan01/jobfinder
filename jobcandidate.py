@@ -60,7 +60,7 @@ def question(_texts):
     Task: This person is looking for a new job position. Return a list of 5 different job titles that this person doesn't have but could consider and would succeed at given they are searching for another job.
     Output Format: Python List. Example of format: '[job_1, job_2, job_3, job_4, job_4]"""
     embeddings = OpenAIEmbeddings()
-    docsearch = Chroma.from_documents(_texts, embeddings, metadatas=[{"source": str(i)} for i in range(len(_texts))]).as_retriever(search_kwargs={"k": 2})
+    docsearch = Chroma.from_documents(_texts, embeddings, metadatas=[{"source": str(i)} for i in range(len(_texts))]).as_retriever(search_kwargs={"k": 3})
     docs = docsearch.get_relevant_documents(prompt_template)
     
     # PROMPT = PromptTemplate(
