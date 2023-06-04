@@ -18,7 +18,7 @@ from streamlit.components.v1 import html
 
 with st.sidebar:
     st.subheader("Enter your API credentials: ")
-    open_api_key = st.text_input("Enter your Open API Key")
+    OPENAI_API_KEY = st.text_input("Enter your Open API Key")
     apify_api_key = st.text_input("Enter your Apify API Key")
     serp_api_key = st.text_input("Enter your SERPAPI Key")
     st.write("Support my projects, buy me a coffee! [link](https://bmc.link/pcallahan)")
@@ -69,7 +69,7 @@ def question(_texts):
 
 
     st.write("3: Searching for recommended job titles...")
-    chain = load_qa_chain(OpenAI(openai_api_key=open_api_key, temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
+    chain = load_qa_chain(OpenAI(openai_api_key="OPENAI_API_KEY", temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
     outcome = chain({"input_documents": docs, "question": prompt_template}, return_only_outputs=True)
     return outcome['output_text']
 
