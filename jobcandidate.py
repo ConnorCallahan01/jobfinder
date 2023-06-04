@@ -18,14 +18,14 @@ from streamlit.components.v1 import html
 
 with st.sidebar:
     st.subheader("Enter your API credentials: ")
-    OPENAI_API_KEY = st.text_input("Enter your Open API Key")
+    open_api_key = st.text_input("Enter your Open API Key")
     apify_api_key = st.text_input("Enter your Apify API Key")
     serp_api_key = st.text_input("Enter your SERPAPI Key")
     st.write("Support my projects, buy me a coffee! [link](https://bmc.link/pcallahan)")
     components.html("""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
                             <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="connor-callahan" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/connor-callahan?trk=profile-badge"></a></div>
                 """, height=280)
-# os.environ["OPENAI_API_KEY"] = open_api_key 
+os.environ["OPENAI_API_KEY"] = open_api_key 
 os.environ["APIFY_API_TOKEN"] = apify_api_key 
 
 @st.cache_resource
