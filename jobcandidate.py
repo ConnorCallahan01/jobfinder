@@ -69,7 +69,7 @@ def question(_texts):
 
 
     st.write("3: Searching for recommended job titles...")
-    chain = load_qa_chain(OpenAI(openai_api_key="OPENAI_API_KEY", temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
+    chain = load_qa_chain(OpenAI(openai_api_key=st.secrets["OPENAI_API_KEY"], temperature=0, model_name="text-davinci-003"), chain_type="map_reduce")
     outcome = chain({"input_documents": docs, "question": prompt_template}, return_only_outputs=True)
     return outcome['output_text']
 
