@@ -41,7 +41,7 @@ def load_patrick(url):
     data=loader.load()
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     st.write("1: LinkedIn Data Loaded")
-    
+    st.write(data)
     texts = text_splitter.split_documents(data)
     st.write("2: Data has been vectored.")
     
